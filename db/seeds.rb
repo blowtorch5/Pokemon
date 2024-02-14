@@ -17,8 +17,7 @@ pokemons.each do |p|
 
   pokemon = region.pokemons.create(
     name:               p["name"],
-    pokedex_entry:      p["pokedex_number"],
-    types:              [p['type1'], p['type2']].reject(&:blank?).join(' + ')
+    pokedex_entry:      p["pokedex_number"]
   )
   puts "Invalid Pokemon #{p["name"]}" unless pokemon&.valid?
 
@@ -28,6 +27,12 @@ pokemons.each do |p|
     cleaned_ability = a.delete("[]'")
     ability = Ability.find_or_create_by(name: cleaned_ability)
     PokemonAbility.create(pokemon: pokemon, ability: ability)
+  end
+
+  types = [p["type1"], p["type2"]].reject(&:blank?)
+  types.each do |t|
+    type = Type.find_or_create_by(name: t)
+    PokemonType.create(pokemon: pokemon, type: type)
   end
   puts p["name"]
 end
