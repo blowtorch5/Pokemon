@@ -1,2 +1,0 @@
-class Generation < ApplicationRecord
-end

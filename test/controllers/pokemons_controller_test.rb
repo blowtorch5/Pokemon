@@ -17,7 +17,7 @@ class PokemonsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create pokemon" do
     assert_difference("Pokemon.count") do
-      post pokemons_url, params: { pokemon: { abilities_id: @pokemon.abilities_id, name: @pokemon.name, pokedex-entry: @pokemon.pokedex-entry, region_id: @pokemon.region_id, types: @pokemon.types } }
+      post pokemons_url, params: { pokemon: { name: @pokemon.name, pokedex-entry: @pokemon.pokedex-entry, region_id: @pokemon.region_id, types: @pokemon.types } }
     end
 
     assert_redirected_to pokemon_url(Pokemon.last)
@@ -34,7 +34,7 @@ class PokemonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update pokemon" do
-    patch pokemon_url(@pokemon), params: { pokemon: { abilities_id: @pokemon.abilities_id, name: @pokemon.name, pokedex-entry: @pokemon.pokedex-entry, region_id: @pokemon.region_id, types: @pokemon.types } }
+    patch pokemon_url(@pokemon), params: { pokemon: { name: @pokemon.name, pokedex-entry: @pokemon.pokedex-entry, region_id: @pokemon.region_id, types: @pokemon.types } }
     assert_redirected_to pokemon_url(@pokemon)
   end
 

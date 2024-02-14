@@ -14,7 +14,6 @@ class PokemonsTest < ApplicationSystemTestCase
     visit pokemons_url
     click_on "New pokemon"
 
-    fill_in "Abilities", with: @pokemon.abilities_id
     fill_in "Name", with: @pokemon.name
     fill_in "Pokedex-entry", with: @pokemon.pokedex-entry
     fill_in "Region", with: @pokemon.region_id
@@ -29,7 +28,6 @@ class PokemonsTest < ApplicationSystemTestCase
     visit pokemon_url(@pokemon)
     click_on "Edit this pokemon", match: :first
 
-    fill_in "Abilities", with: @pokemon.abilities_id
     fill_in "Name", with: @pokemon.name
     fill_in "Pokedex-entry", with: @pokemon.pokedex-entry
     fill_in "Region", with: @pokemon.region_id

@@ -5,11 +5,9 @@ one:
   types: MyString
   pokedex-entry: 1
   region: one
-  abilities: one
 
 two:
   name: MyString
   types: MyString
   pokedex-entry: 1
   region: two
-  abilities: two

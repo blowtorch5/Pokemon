@@ -1,6 +1,6 @@
 require "test_helper"
 
-class GenerationTest < ActiveSupport::TestCase
+class PokemonAbilityTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

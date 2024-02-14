@@ -1,4 +1,5 @@
 class Pokemon < ApplicationRecord
   belongs_to :region
-  belongs_to :abilities
+  has_many :pokemon_abilities
+  has_many :abilities, through: :pokemon_abilities
 end
