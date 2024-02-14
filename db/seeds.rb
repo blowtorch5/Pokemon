@@ -1,8 +1,8 @@
 require 'csv'
 
+PokemonAbility.delete_all
 Pokemon.delete_all
 Ability.delete_all
-PokemonAbility.delete_all
 Region.delete_all
 
 filename = Rails.root.join("db/pokemon-data.csv")
@@ -13,18 +13,20 @@ csv_data = File.read(filename)
 pokemons = CSV.parse(csv_data, headers: true, encoding: "utf-8")
 
 pokemons.each do |p|
-  region = Region.find_or_create_by(name: p["generation"])
+  region = Region.find_or_create_by(name: p["region"])
 
   pokemon = region.pokemons.create(
     name:               p["name"],
-    pokedex_entry:      p["pokedex_number"]
+    pokedex_entry:      p["pokedex_number"],
+    types:              [p['type1'], p['type2']].reject(&:blank?).join(' + ')
   )
   puts "Invalid Pokemon #{p["name"]}" unless pokemon&.valid?
 
-  abilities = [p["type1"] + p["type2"]].compact
+  abilities = p["abilities"].split(",").map(&:strip)
 
   abilities.each do |a|
-    ability = Ability.find_or_create_by(name: a)
+    cleaned_ability = a.delete("[]'")
+    ability = Ability.find_or_create_by(name: cleaned_ability)
     PokemonAbility.create(pokemon: pokemon, ability: ability)
   end
   puts p["name"]
