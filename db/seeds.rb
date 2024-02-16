@@ -14,7 +14,7 @@ csv_data = File.read(filename)
 pokemons = CSV.parse(csv_data, headers: true, encoding: "utf-8")
 
 pokemons.each do |p|
-  region = Region.find_or_create_by(name: p["region"])
+  region = Region.find_or_create_by(name: p["region"], generation: p["generation"])
 
   pokemon = region.pokemons.create(
     name:               p["name"],
@@ -22,7 +22,7 @@ pokemons.each do |p|
   )
   puts "Invalid Pokemon #{p["name"]}" unless pokemon&.valid?
 
-  abilities = p["abilities"].split(",").map(&:strip)
+  abilities = [p["ability_1"], p["ability_2"], p["ability_hidden"]].reject(&:blank?)
 
   abilities.each do |a|
     cleaned_ability = a.delete("[]'")
@@ -30,7 +30,7 @@ pokemons.each do |p|
     PokemonAbility.create(pokemon: pokemon, ability: ability)
   end
 
-  types = [p["type1"], p["type2"]].reject(&:blank?)
+  types = [p["type_1"], p["type_2"]].reject(&:blank?)
 
   types.each do |t|
     type = Type.find_or_create_by(name: t)
