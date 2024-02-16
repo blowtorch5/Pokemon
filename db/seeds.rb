@@ -39,3 +39,5 @@ pokemons.each do |p|
 
   puts p["name"]
 end
+
+puts "success"
