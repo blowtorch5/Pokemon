@@ -30,7 +30,7 @@ abilities,base_egg_steps,base_happiness,base_total,capture_rate,defense,experien
 "['Poison Point', 'Rivalry', 'Hustle']",5120,70,275,235,52,1059860,0.4,55,Nidoran?,0,29,40,40,41,poison,,7,Kanto,0
 "['Poison Point', 'Rivalry', 'Hustle']",5120,70,365,120,67,1059860,0.8,70,Nidorina,0,30,55,55,56,poison,,20,Kanto,0
 "['Poison Point', 'Rivalry', 'Sheer Force']",5120,70,505,45,87,1059860,1.3,90,Nidoqueen,0,31,75,85,76,poison,ground,60,Kanto,0
-"['Poison Point', 'Rivalry', 'Hustle']",5120,70,273,235,40,1059860,0.5,46,Nidoran?,100,32,40,40,50,poison,,9,Kanto,0
+"['Poison Point', 'Rivalry', 'Hustle']",5120,70,273,235,40,1059860,0.5,46,Nidoran,100,32,40,40,50,poison,,9,Kanto,0
 "['Poison Point', 'Rivalry', 'Hustle']",5120,70,365,120,57,1059860,0.9,61,Nidorino,100,33,55,55,65,poison,,19.5,Kanto,0
 "['Poison Point', 'Rivalry', 'Sheer Force']",5120,70,505,45,77,1059860,1.4,81,Nidoking,100,34,85,75,85,poison,ground,62,Kanto,0
 "['Cute Charm', 'Magic Guard', 'Friend Guard']",2560,140,323,150,48,800000,0.6,70,Clefairy,24.6,35,60,65,35,fairy,,7.5,Kanto,0

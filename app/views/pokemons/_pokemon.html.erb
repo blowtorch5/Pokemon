@@ -1,22 +1,26 @@
 <div id="<%= dom_id pokemon %>">
   <p>
     <strong>Name:</strong>
-    <%= pokemon.name %>
+    <%= link_to pokemon.name, pokemon %>
   </p>
 
   <p>
     <strong>Types:</strong>
-    <%= pokemon.types %>
+    <% pokemon.types.each do |t| %>
+
+      <%= link_to t.name.capitalize, t %>
+
+    <% end %>
   </p>
 
   <p>
     <strong>Pokedex-entry:</strong>
-    <%= pokemon.pokedex-entry %>
+    <%= pokemon.pokedex_entry %>
   </p>
 
   <p>
     <strong>Region:</strong>
-    <%= pokemon.region_id %>
+    <%= link_to pokemon.region.name, pokemon.region %>
   </p>
 
 </div>

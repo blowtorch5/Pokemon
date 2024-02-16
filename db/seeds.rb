@@ -1,6 +1,7 @@
 require 'csv'
 
 PokemonAbility.delete_all
+PokemonType.delete_all
 Pokemon.delete_all
 Ability.delete_all
 Region.delete_all
@@ -30,9 +31,11 @@ pokemons.each do |p|
   end
 
   types = [p["type1"], p["type2"]].reject(&:blank?)
+
   types.each do |t|
     type = Type.find_or_create_by(name: t)
     PokemonType.create(pokemon: pokemon, type: type)
   end
+
   puts p["name"]
 end
