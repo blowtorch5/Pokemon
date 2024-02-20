@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_17_095037) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_14_230820) do
   create_table "abilities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -37,9 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_17_095037) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
-    t.string "types"
     t.integer "pokedex_entry"
-    t.integer "region_id", null: false
     t.string "species"
     t.float "height"
     t.float "weight"
@@ -49,13 +47,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_17_095037) do
     t.integer "special_attack"
     t.integer "special_defense"
     t.integer "speed"
-    t.index ["region_id"], name: "index_pokemons_on_region_id"
+    t.integer "region_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["region_id"], name: "index_pokemons_on_region_id"
   end
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
+    t.integer "generation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

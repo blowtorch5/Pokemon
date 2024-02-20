@@ -14,7 +14,7 @@ csv_data = File.read(filename)
 pokemons = CSV.parse(csv_data, headers: true, encoding: "utf-8")
 
 pokemons.each do |p|
-  region = Region.find_or_create_by(name: p["region"])
+  region = Region.find_or_create_by(name: p["region"], generation: p["generation"])
 
   pokemon = region.pokemons.create(
     name:               p["name"],
