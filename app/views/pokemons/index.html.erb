@@ -2,6 +2,8 @@
 
 <h1>Pokemons</h1>
 
+<%= will_paginate @pokemons %>
+
 <div id="pokemons">
   <% @pokemons.each do |pokemon| %>
     <%= render pokemon %>
@@ -9,3 +11,4 @@
 </div>
 
 <%= link_to "New pokemon", new_pokemon_path %>
+<%= will_paginate @pokemons %>
