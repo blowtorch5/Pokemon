@@ -3,7 +3,7 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons or /pokemons.json
   def index
-    @pokemons = Pokemon.paginate(page: params[:page], per_page: 100)
+    @pokemons = Pokemon.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /pokemons/1 or /pokemons/1.json
