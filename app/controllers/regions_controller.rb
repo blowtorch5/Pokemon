@@ -8,6 +8,8 @@ class RegionsController < ApplicationController
 
   # GET /regions/1 or /regions/1.json
   def show
+    @region = Region.find_by(id: params[:id])
+    @pokemons = @region.pokemons.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /regions/new
