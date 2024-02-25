@@ -1,6 +1,11 @@
 <div id="<%= dom_id pokemon %>">
 
+<% if controller_name == "pokemons" && action_name == "show" %>
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=25%>
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=25%>
+<% else %>
   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>">
+<% end %>
 
   <p>
     <strong>Name:</strong>
