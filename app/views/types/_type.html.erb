@@ -2,9 +2,9 @@
   <p>
     <strong>
       <% if controller_name == "types" && action_name == "show" %>
-        <%= type.name %>
+        <%= type.name.capitalize %>
       <% else %>
-        <%= link_to type.name, type %>
+        <%= link_to type.name.capitalize, type %>
       <% end %>
     </strong>
   </p>
