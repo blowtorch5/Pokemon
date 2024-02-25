@@ -8,6 +8,8 @@ class AbilitiesController < ApplicationController
 
   # GET /abilities/1 or /abilities/1.json
   def show
+    @ability = Ability.find_by(id: params[:id])
+    @pokemons = @ability.pokemons.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /abilities/new

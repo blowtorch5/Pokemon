@@ -8,6 +8,8 @@ class TypesController < ApplicationController
 
   # GET /types/1 or /types/1.json
   def show
+    @type = Type.find_by(id: params[:id])
+    @pokemons = @type.pokemons.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /types/new

@@ -2,6 +2,9 @@
 
 <%= render @ability %>
 
+<%= will_paginate @pokemons %>
+<%= render @pokemons %>
+
 <div>
   <%= link_to "Back to abilities", abilities_path %>
 </div>

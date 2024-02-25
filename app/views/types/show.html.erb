@@ -2,6 +2,9 @@
 
 <%= render @type %>
 
+<%= will_paginate @pokemons %>
+<%= render @pokemons %>
+
 <div>
   <%= link_to "Back to types", types_path %>
 </div>
