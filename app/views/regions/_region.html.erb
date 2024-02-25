@@ -1,11 +1,12 @@
 <div id="<%= dom_id region %>">
   <p>
-    <strong>Name:</strong>
-    <% if controller_name == "regions" && action_name == "show" %>
-      <%= region.name %>
-    <% else %>
-      <%= link_to region.name, region %>
-    <% end %>
+    <strong>
+      <% if controller_name == "regions" && action_name == "show" %>
+        Pokémons that come from <%= region.name %>
+      <% else %>
+        <%= link_to region.name, region %>
+      <% end %>
+    </strong>
   </p>
   <p>
     <strong>Generation:</strong>

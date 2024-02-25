@@ -2,7 +2,7 @@
   <p>
     <strong>
       <% if controller_name == "types" && action_name == "show" %>
-        <%= type.name.capitalize %>
+        Pokémons that are the <%= type.name.capitalize %> type
       <% else %>
         <%= link_to type.name.capitalize, type %>
       <% end %>

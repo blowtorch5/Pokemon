@@ -2,27 +2,43 @@
 <div class="columns">
 
   <div class="column">
-    <% @pokemons.each do |p| %>
-      <%= render partial: 'pokemons/pokemon', locals: {pokemon: p} %>
-    <% end %>
+    <ul>
+      <% @pokemons.each do |p| %>
+        <li>
+          <%= render partial: 'pokemons/pokemon', locals: {pokemon: p} %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="column">
-    <% @regions.each do |r| %>
-      <%= link_to r.name, r %>
-    <% end %>
+    <ul>
+      <% @regions.each do |r| %>
+        <li>
+          <%= link_to r.name, r %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="column">
-    <% @types.each do |t| %>
-        <%= link_to t.name, t %>
-    <% end %>
+    <ul>
+      <% @types.each do |t| %>
+        <li>
+          <%= link_to t.name, t %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="column">
-    <% @abilities.each do |a| %>
-      <%= link_to a.name, a %>
-    <% end %>
+    <ul>
+      <% @abilities.each do |a| %>
+        <li>
+          <%= link_to a.name, a %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
 </div>
