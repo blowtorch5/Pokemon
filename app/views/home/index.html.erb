@@ -1,0 +1,24 @@
+<h1>Pokemon Dictionary</h1>
+<div>
+  <% @pokemons.each do |p| %>
+    <%= render partial: 'pokemons/pokemon', locals: {pokemon: p} %>
+  <% end %>
+</div>
+
+<div>
+  <% @regions.each do |r| %>
+    <%= link_to r.name, r %>
+  <% end %>
+</div>
+
+<div>
+  <% @types.each do |t| %>
+    <%= link_to t.name, t %>
+  <% end %>
+</div>
+
+<div>
+  <% @abilities.each do |a| %>
+    <%= link_to a.name, a %>
+  <% end %>
+</div>

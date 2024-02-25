@@ -1,7 +1,7 @@
 <div id="<%= dom_id pokemon %>">
   <p>
     <strong>Name:</strong>
-    <%= link_to pokemon.name, pokemon %>
+    <%= pokemon.name %>
   </p>
 
   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>">
@@ -29,4 +29,54 @@
     <strong>species:</strong>
     <%= pokemon.species %>
   </p>
+
+  <% if controller_name == 'pokemons' && action_name == 'show' %>
+    <p>
+      <strong><%= "Ability".pluralize(pokemon.abilities.count) %>:</strong>
+      <% pokemon.abilities.each_with_index do |ability, index| %>
+        <%= link_to ability.name, ability %><%= ", " unless index == pokemon.abilities.size - 1 %>
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Height:</strong>
+      <%= pokemon.height %>
+    </p>
+
+    <p>
+      <strong>Weight:</strong>
+      <%= pokemon.weight %>
+    </p>
+
+    <p>
+      <strong>Health:</strong>
+      <%= pokemon.health %>
+    </p>
+
+    <p>
+      <strong>Attack:</strong>
+      <%= pokemon.attack %>
+    </p>
+
+    <p>
+      <strong>Defense:</strong>
+      <%= pokemon.defense %>
+    </p>
+
+    <p>
+      <strong>Special Attack:</strong>
+      <%= pokemon.special_attack %>
+    </p>
+
+    <p>
+      <strong>Special Defense:</strong>
+      <%= pokemon.special_defense %>
+    </p>
+
+    <p>
+      <strong>Speed:</strong>
+      <%= pokemon.speed %>
+    </p>
+  <% end %>
+
 </div>

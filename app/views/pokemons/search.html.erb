@@ -1,0 +1,12 @@
+<p>
+  Found <%= pluralize @pokemons.count, 'Pokémons' %> that contain <%= params[:keywords] %> within its name.
+</p>
+
+<%= will_paginate @pokemons %>
+<div>
+  <% @pokemons.each do |pokemon| %>
+    <%= render pokemon %>
+  <% end %>
+</div>
+<%= will_paginate @pokemons %>
+

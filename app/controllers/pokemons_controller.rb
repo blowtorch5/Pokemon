@@ -10,6 +10,11 @@ class PokemonsController < ApplicationController
   def show
   end
 
+  def search
+    wildcard = "%#{params[:keywords]}%"
+    @pokemons = Pokemon.where("name LIKE ?", wildcard).paginate(page: params[:page], per_page: 50)
+  end
+
   # GET /pokemons/new
   def new
     @pokemon = Pokemon.new
