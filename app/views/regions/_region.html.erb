@@ -1,7 +1,11 @@
 <div id="<%= dom_id region %>">
   <p>
     <strong>Name:</strong>
-    <%= region.name %>
+    <% if controller_name == "regions" && action_name == "show" %>
+      <%= region.name %>
+    <% else %>
+      <%= link_to region.name, region %>
+    <% end %>
   </p>
   <p>
     <strong>Generation:</strong>

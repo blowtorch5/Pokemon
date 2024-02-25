@@ -3,7 +3,7 @@ class AbilitiesController < ApplicationController
 
   # GET /abilities or /abilities.json
   def index
-    @abilities = Ability.all
+    @abilities = Ability.all.paginate(page: params[:page], per_page: 50)
   end
 
   # GET /abilities/1 or /abilities/1.json

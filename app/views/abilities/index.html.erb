@@ -3,12 +3,11 @@
 <h1>Abilities</h1>
 
 <div id="abilities">
+  <%= will_paginate @abilities %>
   <% @abilities.each do |ability| %>
     <%= render ability %>
-    <p>
-      <%= link_to "Show this ability", ability %>
-    </p>
   <% end %>
 </div>
-
-<%= link_to "New ability", new_ability_path %>
+<div>
+  <%= will_paginate @abilities %>
+</div>

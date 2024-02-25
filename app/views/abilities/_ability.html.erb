@@ -1,7 +1,11 @@
 <div id="<%= dom_id ability %>">
   <p>
-    <strong>Name:</strong>
-    <%= ability.name %>
+    <strong>
+      <% if controller_name == "abilities" && action_name == "show" %>
+        <%= ability.name %>
+      <% else %>
+        <%= link_to ability.name, ability %>
+      <% end %>
+    </strong>
   </p>
-
 </div>

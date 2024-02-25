@@ -1,7 +1,12 @@
 <div id="<%= dom_id type %>">
   <p>
-    <strong>Name:</strong>
-    <%= type.name.capitalize %>
+    <strong>
+      <% if controller_name == "types" && action_name == "show" %>
+        <%= type.name %>
+      <% else %>
+        <%= link_to type.name, type %>
+      <% end %>
+    </strong>
   </p>
 
 </div>
