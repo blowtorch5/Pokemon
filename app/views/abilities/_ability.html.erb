@@ -2,7 +2,13 @@
   <p>
     <strong>
       <% if controller_name == "abilities" && action_name == "show" %>
-        Pokémons with <%= ability.name %>
+        <section class="hero is-info">
+
+          <div class="hero-body">
+            <h1 class="title">Pokémons with <%= ability.name %></h1>
+          </div>
+
+        </section>
       <% else %>
         <%= link_to ability.name, ability %>
       <% end %>

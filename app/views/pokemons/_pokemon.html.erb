@@ -1,96 +1,118 @@
-<div id="<%= dom_id pokemon %>">
+
+<% if controller_name == "pokemons" && action_name == "show" %>
+  <div id="<%= dom_id pokemon %>">
+<% else %>
+  <div id="<%= dom_id pokemon %>" class="box">
+<% end %>
+
+  <% if controller_name == "pokemons" && action_name == "show" %>
+    <section class="hero is-info">
+
+      <div class="hero-body">
+        <h1 class="title"><%= pokemon.name %></h1>
+      </div>
+
+    </section>
+  <% end %>
 
   <article class="media">
-      <% if controller_name == "pokemons" && action_name == "show" %>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=25%>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=25%>
-      <% else %>
-        <p class="image is-128x128">
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>">
-        </p>
-      <% end %>
 
-  <div>
-   <p>
-      <strong>Name:</strong>
-      <% if controller_name == "pokemons" && action_name == "show" %>
-        <%= pokemon.name %>
-      <% else %>
-        <%= link_to pokemon.name, pokemon %>
-      <% end %>
-    </p>
-
-    <p>
-      <strong>species:</strong>
-      <%= pokemon.species %>
-    </p>
-
-    <p>
-      <strong>Types:</strong>
-      <% pokemon.types.each do |t| %>
-        <%= link_to t.name.capitalize, t %>
-      <% end %>
-    </p>
-
-    <p>
-      <strong><%= "Ability".pluralize(pokemon.abilities.count) %>:</strong>
-      <% pokemon.abilities.each_with_index do |ability, index| %>
-        <%= link_to ability.name, ability %><%= ", " unless index == pokemon.abilities.size - 1 %>
-      <% end %>
-    </p>
-
-    <p>
-      <strong>Pokedex-entry:</strong>
-      <%= pokemon.pokedex_entry %>
-    </p>
-
-    <p>
-      <strong>Region:</strong>
-      <%= link_to pokemon.region.name, pokemon.region %>
-    </p>
-
-    <% if controller_name == 'pokemons' && action_name == 'show' %>
-      <p>
-        <strong>Height:</strong>
-        <%= pokemon.height %> meters
-      </p>
-
-      <p>
-        <strong>Weight:</strong>
-        <%= pokemon.weight %> kilograms
-      </p>
-
-      <p>
-        <strong>Health:</strong>
-        <%= pokemon.health %>
-      </p>
-
-      <p>
-        <strong>Attack:</strong>
-        <%= pokemon.attack %>
-      </p>
-
-      <p>
-        <strong>Defense:</strong>
-        <%= pokemon.defense %>
-      </p>
-
-      <p>
-        <strong>Special Attack:</strong>
-        <%= pokemon.special_attack %>
-      </p>
-
-      <p>
-        <strong>Special Defense:</strong>
-        <%= pokemon.special_defense %>
-      </p>
-
-      <p>
-        <strong>Speed:</strong>
-        <%= pokemon.speed %>
+    <% if controller_name == "pokemons" && action_name == "show" %>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=25%>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=25%>
+    <% else %>
+      <p class="image is-128x128">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>">
       </p>
     <% end %>
-  </div>
+
+    <section class="section pt-0">
+
+    <p>
+        <% if controller_name != "pokemons" || action_name != "show" %>
+          <strong>Name:</strong>
+          <%= link_to pokemon.name, pokemon %>
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Species:</strong>
+        <%= pokemon.species %>
+      </p>
+
+      <p>
+        <strong>Types:</strong>
+        <% pokemon.types.each do |t| %>
+          <%= link_to t.name.capitalize, t %>
+        <% end %>
+      </p>
+
+      <p>
+        <strong><%= "Ability".pluralize(pokemon.abilities.count) %>:</strong>
+        <% pokemon.abilities.each_with_index do |ability, index| %>
+          <%= link_to ability.name, ability %><%= ", " unless index == pokemon.abilities.size - 1 %>
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Pokedex Entry:</strong>
+        <%= pokemon.pokedex_entry %>
+      </p>
+
+      <p>
+        <strong>Region:</strong>
+        <%= link_to pokemon.region.name, pokemon.region %>
+      </p>
+
+      <% if controller_name == 'pokemons' && action_name == 'show' %>
+        <p>
+          <strong>Height:</strong>
+          <%= pokemon.height %> meters
+        </p>
+
+        <p>
+          <strong>Weight:</strong>
+          <%= pokemon.weight %> kilograms
+        </p>
+
+        <p>
+          <strong>Health:</strong>
+          <%= pokemon.health %>
+          <progress class="progress is-danger" value= <%= pokemon.health %> max="255"><%= pokemon.health %></progress>
+        </p>
+
+        <p>
+          <strong>Attack:</strong>
+          <%= pokemon.attack %>
+          <progress class="progress is-info" value= <%= pokemon.attack %> max="255"><%= pokemon.attack %></progress>
+        </p>
+
+        <p>
+          <strong>Defense:</strong>
+          <%= pokemon.defense %>
+          <progress class="progress is-primary" value= <%= pokemon.defense %> max="255"><%= pokemon.defense %></progress>
+        </p>
+
+        <p>
+          <strong>Special Attack:</strong>
+          <%= pokemon.special_attack %>
+          <progress class="progress is-link" value= <%= pokemon.special_attack %> max="255"><%= pokemon.special_attack %></progress>
+        </p>
+
+        <p>
+          <strong>Special Defense:</strong>
+          <%= pokemon.special_defense %>
+          <progress class="progress is-success" value= <%= pokemon.special_defense %> max="255"><%= pokemon.special_defense %></progress>
+        </p>
+
+        <p>
+          <strong>Speed:</strong>
+          <%= pokemon.speed %>
+          <progress class="progress is-warning" value= <%= pokemon.speed %> max="255"><%= pokemon.speed %></progress>
+        </p>
+      <% end %>
+    </section>
 
   </article>
+
 </div>

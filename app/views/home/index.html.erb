@@ -1,10 +1,17 @@
-<h1>Pokemon Dictionary</h1>
+<section class="hero is-info">
+
+  <div class="hero-body">
+    <h1 class="title">Pokémon Dictionary</h1>
+  </div>
+
+</section>
+
 <div class="columns">
 
-  <div class="column">
+  <div class="column is-half">
     <ul>
       <% @pokemons.each do |p| %>
-        <li>
+        <li class="mb-5">
           <%= render partial: 'pokemons/pokemon', locals: {pokemon: p} %>
         </li>
       <% end %>
@@ -12,39 +19,45 @@
   </div>
 
   <div class="column">
-    <ul>
-      <% @regions.each do |r| %>
-        <li>
-          <strong>
-            <%= link_to r.name, r %>
-          </strong>
-        </li>
-      <% end %>
-    </ul>
+    <div class="box">
+      <ul>
+        <% @regions.each do |r| %>
+          <li>
+            <strong>
+              <%= link_to r.name, r, class: "button is-large is-fullwidth" %>
+            </strong>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <div class="column">
-    <ul>
-      <% @types.each do |t| %>
-        <li>
-          <strong>
-            <%= link_to t.name, t %>
-          </strong>
-        </li>
-      <% end %>
-    </ul>
+    <div class="box">
+      <ul>
+        <% @types.each do |t| %>
+          <li>
+            <strong>
+              <%= link_to t.name, t, class: "button is-large is-fullwidth" %>
+            </strong>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <div class="column">
-    <ul>
-      <% @abilities.each do |a| %>
-        <li>
-          <strong>
-            <%= link_to a.name, a %>
-          </strong>
-        </li>
-      <% end %>
-    </ul>
+    <div class="box">
+      <ul>
+        <% @abilities.each do |a| %>
+          <li>
+            <strong>
+              <%= link_to a.name, a, class: "button is-large is-fullwidth" %>
+            </strong>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
 </div>

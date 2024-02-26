@@ -2,7 +2,13 @@
   <p>
     <strong>
       <% if controller_name == "regions" && action_name == "show" %>
-        Pokémons that come from <%= region.name %>
+        <section class="hero is-info">
+
+          <div class="hero-body">
+            <h1 class="title">Pokémons that come from <%= region.name %></h1>
+          </div>
+
+        </section>
       <% else %>
         <%= link_to region.name, region %>
       <% end %>
