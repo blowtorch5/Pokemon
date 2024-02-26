@@ -6,16 +6,13 @@
 
           <div class="hero-body">
             <h1 class="title">Pokémons that come from <%= region.name %></h1>
+            <h2 class="subtitle">This is generation #<%= region.generation %></h2>
           </div>
 
         </section>
       <% else %>
-        <%= link_to region.name, region %>
+        <%= link_to region.name, region, class: "button is-large is-fullwidth" %>
       <% end %>
     </strong>
-  </p>
-  <p>
-    <strong>Generation:</strong>
-    <%= region.generation %>
   </p>
 </div>
