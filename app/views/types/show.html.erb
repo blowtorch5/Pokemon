@@ -2,10 +2,10 @@
 
 <%= render @type %>
 
-<%= will_paginate @pokemons %>
+<%= paginate @pokemons, class: "pagination" %>
 <%= render @pokemons %>
 
 <div>
   <%= link_to "Back to types", types_path %>
-  <%= will_paginate @pokemons %>
+  <%= paginate @pokemons, params: {class: "pagination-link", role: "navigation"} %>
 </div>

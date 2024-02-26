@@ -2,10 +2,10 @@
 
 <%= render @region %>
 
-<%= will_paginate @pokemons %>
+<%= paginate @pokemons %>
 <%= render @pokemons %>
 
 <div>
   <%= link_to "Back to regions", regions_path %>
-  <%= will_paginate @pokemons %>
+  <%= paginate @pokemons %>
 </div>

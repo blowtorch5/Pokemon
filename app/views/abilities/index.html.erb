@@ -9,11 +9,11 @@
 </section>
 
 <div id="abilities">
-  <%= will_paginate @abilities %>
+  <%= paginate @abilities %>
   <% @abilities.each do |ability| %>
     <%= render ability %>
   <% end %>
 </div>
 <div>
-  <%= will_paginate @abilities %>
+  <%= paginate @abilities %>
 </div>

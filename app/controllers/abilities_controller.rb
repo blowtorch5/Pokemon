@@ -3,13 +3,13 @@ class AbilitiesController < ApplicationController
 
   # GET /abilities or /abilities.json
   def index
-    @abilities = Ability.all.paginate(page: params[:page], per_page: 50)
+    @abilities = Ability.all.page params[:page]
   end
 
   # GET /abilities/1 or /abilities/1.json
   def show
     @ability = Ability.find_by(id: params[:id])
-    @pokemons = @ability.pokemons.paginate(page: params[:page], per_page: 50)
+    @pokemons = @ability.pokemons.page params[:page]
   end
 
   # GET /abilities/new

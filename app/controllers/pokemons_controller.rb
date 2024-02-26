@@ -3,7 +3,7 @@ class PokemonsController < ApplicationController
 
   # GET /pokemons or /pokemons.json
   def index
-    @pokemons = Pokemon.paginate(page: params[:page], per_page: 50)
+    @pokemons = Pokemon.page params[:page]
   end
 
   # GET /pokemons/1 or /pokemons/1.json
@@ -12,7 +12,7 @@ class PokemonsController < ApplicationController
 
   def search
     wildcard = "%#{params[:keywords]}%"
-    @pokemons = Pokemon.where("name LIKE ?", wildcard).paginate(page: params[:page], per_page: 50)
+    @pokemons = Pokemon.where("name LIKE ?", wildcard).page params[:page]
   end
 
   # GET /pokemons/new
