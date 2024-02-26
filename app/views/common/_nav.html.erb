@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <div class="navbar-menu">
+
+    <%= link_to "Home", root_path, class: "navbar-item" %>
+    <%= link_to "Pokémons", pokemons_path, class: "navbar-item" %>
+    <%= link_to "Regions", regions_path, class: "navbar-item" %>
+    <%= link_to "Types", types_path, class: "navbar-item" %>
+    <%= link_to "Abilities", abilities_path, class: "navbar-item" %>
+
+    <%= form_with(url: search_pokemons_path, method: :get, local: true, class: "navbar-item") do %>
+      <%= text_field_tag(:keywords, nil, placeholder: "Search for Pokémons") %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+  </div>
+</nav>
