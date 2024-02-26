@@ -9,11 +9,17 @@
 </section>
 
 <div id="abilities">
-  <%= paginate @abilities %>
-  <% @abilities.each do |ability| %>
-    <%= render ability %>
-  <% end %>
+
+  <ul>
+
+    <% @abilities.each_with_index do |ability, i| %>
+      <li class="mb-1">
+        <%= render ability %>
+      </li>
+    <% end %>
+
+  </ul>
+
 </div>
-<div>
-  <%= paginate @abilities %>
-</div>
+
+<%= paginate @abilities %>

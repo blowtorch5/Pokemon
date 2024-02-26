@@ -8,21 +8,21 @@
 
 <div class="columns">
 
-  <div class="column is-half">
+  <div class="column is-half mt-5">
     <ul>
-      <% @pokemons.each do |p| %>
-        <li class="mb-5">
+      <% @pokemons.each_with_index do |p, i| %>
+        <li class=<%= "mb-5" unless i >= @pokemons.length - 1 %>>
           <%= render partial: 'pokemons/pokemon', locals: {pokemon: p} %>
         </li>
       <% end %>
     </ul>
   </div>
 
-  <div class="column">
+  <div class="column mt-5">
     <div class="box">
       <ul>
-        <% @regions.each do |r| %>
-          <li>
+        <% @regions.each_with_index do |r, i| %>
+          <li class=<%= "mb-1" unless i >= @regions.length - 1 %>>
             <strong>
               <%= link_to r.name, r, class: "button is-medium is-fullwidth" %>
             </strong>
@@ -32,11 +32,11 @@
     </div>
   </div>
 
-  <div class="column">
+  <div class="column mt-5">
     <div class="box">
       <ul>
-        <% @types.each do |t| %>
-          <li>
+        <% @types.each_with_index do |t, i| %>
+          <li class=<%= "mb-1" unless i >= @types.length - 1 %>>
             <strong>
               <%= link_to t.name, t, class: "button is-medium is-fullwidth" %>
             </strong>
@@ -46,11 +46,11 @@
     </div>
   </div>
 
-  <div class="column">
+  <div class="column mt-5">
     <div class="box">
       <ul>
-        <% @abilities.each do |a| %>
-          <li>
+        <% @abilities.each_with_index do |a, i| %>
+          <li class=<%= "mb-1" unless i >= @abilities.length - 1 %>>
             <strong>
               <%= link_to a.name, a, class: "button is-medium is-fullwidth" %>
             </strong>

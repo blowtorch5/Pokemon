@@ -9,7 +9,13 @@
 </section>
 
 <div id="regions">
-  <% @regions.each do |region| %>
-    <%= render region %>
-  <% end %>
+
+  <ul>
+    <% @regions.each_with_index do |region, i| %>
+      <li class=<%= "mb-1" unless i >= @regions.length - 1 %>>
+        <%= render region %>
+      </li>
+    <% end %>
+  </ul>
+
 </div>

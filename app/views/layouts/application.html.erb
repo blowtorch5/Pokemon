@@ -14,7 +14,9 @@
   <body>
     <%= render partial: "common/nav" %>
     <%= yield %>
-    <%= render partial: "common/footer" %>
+    <div class="navbar">
+      <%= render partial: "common/footer" %>
+    </div>
     <p>
       <em>Copywrong Pokémon 2024</em>
     </p>

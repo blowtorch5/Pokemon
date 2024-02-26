@@ -1,14 +1,8 @@
-<nav class="navbar">
-  <div class="navbar-menu">
-
-    <%= link_to "Home", root_path, class: "navbar-item" %>
-    <%= link_to "Pokémons", pokemons_path, class: "navbar-item" %>
-    <%= link_to "Regions", regions_path, class: "navbar-item" %>
-    <%= link_to "Types", types_path, class: "navbar-item" %>
-    <%= link_to "Abilities", abilities_path, class: "navbar-item" %>
-    <% cms_pages.each do |page| %>
-        <%= link_to page.title, page_path(page), class: "navbar-item" %>
-    <% end %>
-
-  </div>
-</nav>
+<%= link_to "Home", root_path, class: "navbar-item" %>
+<%= link_to "Pokémons", pokemons_path, class: "navbar-item" %>
+<%= link_to "Regions", regions_path, class: "navbar-item" %>
+<%= link_to "Types", types_path, class: "navbar-item" %>
+<%= link_to "Abilities", abilities_path, class: "navbar-item" %>
+<% cms_pages.each do |page| %>
+    <%= link_to page.title, page_path(page), class: "navbar-item" %>
+<% end %>

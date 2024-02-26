@@ -9,7 +9,15 @@
 </section>
 
 <div id="types">
-  <% @types.each do |type| %>
-    <%= render type %>
-  <% end %>
+
+  <ul>
+
+    <% @types.each_with_index do |type, i| %>
+      <li class=<%= "mb-1" unless i >= @types.length - 1 %>>
+        <%= render type %>
+      </li>
+    <% end %>
+
+  </ul>
+
 </div>

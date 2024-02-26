@@ -1,7 +1,6 @@
 <nav class="navbar">
-  <div class="navbar-menu">
 
-    <%= render partial: "common/footer" %>
+  <div class="navbar-menu">
 
     <%= form_with(url: search_pokemons_path, method: :get, local: true, class: "navbar-item") do %>
       <%= text_field_tag(:keywords, nil, placeholder: "Search for Pokémons", class: "input") %>
@@ -9,4 +8,11 @@
     <% end %>
 
   </div>
+
+  <div class="navbar-end">
+
+    <%= render partial: "common/footer" %>
+
+  </div>
+
 </nav>
