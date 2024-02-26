@@ -52,7 +52,7 @@ Page.create(
   title: 'About the data',
   content: 'A simple Pokémon dictionary that displays all current Pokémon (as of 2024). The dictionary will display Pokémon and their stats, types, and the regions they originate from.
   The dataset includes the Pokémons’ names, species, types, original regions, abilities, height, weight, health points (HP), attack points (ATK), defense points (DEF), special attack (Sp.ATK), special defense (Sp.DEF), and speed (SPD)
-  It was obtained from Kaggle and was made by Mario Tormo Romero, I modified it to include the names of the regions for each generation',
+  It was obtained from Kaggle and was made by Mario Tormo Romero, I modified it to include the names of the regions for each generation. This data also includes photos from the Pokémon Wiki',
 )
 
 puts "success"

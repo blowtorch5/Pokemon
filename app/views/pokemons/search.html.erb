@@ -1,11 +1,8 @@
 <section class="hero is-info">
-
   <div class="hero-body">
     <h1 class="title">"<%= params[:keywords] %>"</h1>
   </div>
-
 </section>
-
 <%= paginate @pokemons %>
 <div>
   <% @pokemons.each do |pokemon| %>

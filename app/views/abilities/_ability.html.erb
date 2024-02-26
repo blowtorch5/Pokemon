@@ -3,11 +3,9 @@
     <strong>
       <% if controller_name == "abilities" && action_name == "show" %>
         <section class="hero is-info">
-
           <div class="hero-body">
             <h1 class="title">Pokémons with <%= ability.name %></h1>
           </div>
-
         </section>
       <% else %>
         <%= link_to ability.name, ability, class: "button is-large is-fullwidth" %>

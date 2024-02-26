@@ -3,11 +3,9 @@
     <strong>
       <% if controller_name == "types" && action_name == "show" %>
         <section class="hero is-info">
-
           <div class="hero-body">
             <h1 class="title">Pokémons that are the <%= type.name.capitalize %> type</h1>
           </div>
-
         </section>
       <% else %>
         <%= link_to type.name.capitalize, type, class: "button is-large is-fullwidth" %>

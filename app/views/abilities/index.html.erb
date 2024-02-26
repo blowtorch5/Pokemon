@@ -1,25 +1,16 @@
 <p style="color: green"><%= notice %></p>
-
 <section class="hero is-info">
-
   <div class="hero-body">
     <h1 class="title">Abilities</h1>
   </div>
-
 </section>
-
 <div id="abilities">
-
   <ul>
-
     <% @abilities.each_with_index do |ability, i| %>
       <li class="mb-1">
         <%= render ability %>
       </li>
     <% end %>
-
   </ul>
-
 </div>
-
 <%= paginate @abilities %>

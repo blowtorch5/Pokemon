@@ -1,21 +1,22 @@
 <p style="color: green"><%= notice %></p>
-
 <section class="hero is-info">
-
   <div class="hero-body">
     <h1 class="title">Regions</h1>
   </div>
-
 </section>
-
 <div id="regions">
-
   <ul>
     <% @regions.each_with_index do |region, i| %>
-      <li class=<%= "mb-1" unless i >= @regions.length - 1 %>>
-        <%= render region %>
+      <li>
+        <div class="box<%= " mb-5" unless i >= @regions.length - 1 %>">
+          <article class="media">
+            <img src=<%= asset_path(region.name) %> alt=<%= region.name %> width=50%>
+            <section class="section">
+              <%= render region %>
+            </section>
+          </article>
+        </div>
       </li>
     <% end %>
   </ul>
-
 </div>

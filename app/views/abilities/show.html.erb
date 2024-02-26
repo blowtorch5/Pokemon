@@ -1,10 +1,7 @@
 <p style="color: green"><%= notice %></p>
-
 <%= render @ability %>
 <%= paginate @pokemons %>
 <%= render @pokemons %>
+<%= link_to "Back to abilities", abilities_path, class: "button mb-1" %>
+<%= paginate @pokemons %>
 
-<div>
-  <%= link_to "Back to abilities", abilities_path %>
-  <%= paginate @pokemons %>
-</div>

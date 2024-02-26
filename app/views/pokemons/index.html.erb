@@ -1,20 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
 <section class="hero is-info">
-
   <div class="hero-body">
     <h1 class="title">Pokémons</h1>
   </div>
-
 </section>
-
 <%= paginate @pokemons %>
-
 <div id="pokemons">
   <% @pokemons.each do |pokemon| %>
     <%= render pokemon %>
   <% end %>
 </div>
-
-<%= link_to "New pokemon", new_pokemon_path %>
 <%= paginate @pokemons %>
