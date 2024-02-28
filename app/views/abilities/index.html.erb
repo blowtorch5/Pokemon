@@ -4,6 +4,7 @@
     <h1 class="title">Abilities</h1>
   </div>
 </section>
+<%= paginate @abilities, window: 1, left: 1, right: 1 %>
 <div id="abilities">
   <ul>
     <% @abilities.each_with_index do |ability, i| %>
@@ -13,4 +14,4 @@
     <% end %>
   </ul>
 </div>
-<%= paginate @abilities %>
+<%= paginate @abilities, window: 1, left: 1, right: 1 %>

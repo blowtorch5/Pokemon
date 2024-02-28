@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <%= render @region %>
-<%= paginate @pokemons %>
+<%= paginate @pokemons, window: 1, left: 1, right: 1 %>
 <%= render @pokemons %>
 <%= link_to "Back to regions", regions_path, class: "button mb-1" %>
-<%= paginate @pokemons %>
+<%= paginate @pokemons, window: 1, left: 1, right: 1 %>
 

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 <%= render @type %>
-<%= paginate @pokemons %>
+<%= paginate @pokemons, window: 1, left: 1, right: 1 %>
 <%= render @pokemons %>
 <%= link_to "Back to types", types_path, class: "button mb-1" %>
-<%= paginate @pokemons, params: {class: "pagination-link", role: "navigation"} %>
+<%= paginate @pokemons, window: 1, left: 1, right: 1 %>
