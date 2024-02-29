@@ -64,36 +64,38 @@
           <strong>Weight:</strong>
           <%= pokemon.weight %> kilograms
         </p>
-        <p>
-          <strong>Health:</strong>
-          <%= pokemon.health %>
-          <progress class="progress is-danger" value= <%= pokemon.health %> max="255"><%= pokemon.health %></progress>
-        </p>
-        <p>
-          <strong>Attack:</strong>
-          <%= pokemon.attack %>
-          <progress class="progress is-info" value= <%= pokemon.attack %> max="255"><%= pokemon.attack %></progress>
-        </p>
-        <p>
-          <strong>Defense:</strong>
-          <%= pokemon.defense %>
-          <progress class="progress is-primary" value= <%= pokemon.defense %> max="255"><%= pokemon.defense %></progress>
-        </p>
-        <p>
-          <strong>Special Attack:</strong>
-          <%= pokemon.special_attack %>
-          <progress class="progress is-link" value= <%= pokemon.special_attack %> max="255"><%= pokemon.special_attack %></progress>
-        </p>
-        <p>
-          <strong>Special Defense:</strong>
-          <%= pokemon.special_defense %>
-          <progress class="progress is-success" value= <%= pokemon.special_defense %> max="255"><%= pokemon.special_defense %></progress>
-        </p>
-        <p>
-          <strong>Speed:</strong>
-          <%= pokemon.speed %>
-          <progress class="progress is-warning" value= <%= pokemon.speed %> max="255"><%= pokemon.speed %></progress>
-        </p>
+        <section class="section p-0">
+          <p>
+            <strong>Health:</strong>
+            <%= pokemon.health %>
+            <progress class="progress is-danger" value= <%= pokemon.health %> max="255"><%= pokemon.health %></progress>
+          </p>
+          <p>
+            <strong>Attack:</strong>
+            <%= pokemon.attack %>
+            <progress class="progress is-info" value= <%= pokemon.attack %> max="255"><%= pokemon.attack %></progress>
+          </p>
+          <p>
+            <strong>Defense:</strong>
+            <%= pokemon.defense %>
+            <progress class="progress is-primary" value= <%= pokemon.defense %> max="255"><%= pokemon.defense %></progress>
+          </p>
+          <p>
+            <strong>Special Attack:</strong>
+            <%= pokemon.special_attack %>
+            <progress class="progress is-link" value= <%= pokemon.special_attack %> max="255"><%= pokemon.special_attack %></progress>
+          </p>
+          <p>
+            <strong>Special Defense:</strong>
+            <%= pokemon.special_defense %>
+            <progress class="progress is-success" value= <%= pokemon.special_defense %> max="255"><%= pokemon.special_defense %></progress>
+          </p>
+          <p>
+            <strong>Speed:</strong>
+            <%= pokemon.speed %>
+            <progress class="progress is-warning" value= <%= pokemon.speed %> max="255"><%= pokemon.speed %></progress>
+          </p>
+        </section>
       <% end %>
     </section>
   </article>
