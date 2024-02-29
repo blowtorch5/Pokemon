@@ -1,22 +1,18 @@
 <div id="<%= dom_id region %>">
-  <p>
     <% if controller_name == "regions" && action_name == "show" %>
-      <section class="hero is-info">
-        <div class="hero-body">
-          <strong>
-            <h1 class="title">Pokémons that come from <%= region.name %></h1>
-            <h2 class="subtitle">This is generation #<%= region.generation %></h2>
-          </strong>
-        </div>
-      </section>
+    <section class="hero is-info">
+      <div class="hero-body">
+        <h1 class="title">Pokémons that come from <%= region.name %></h1>
+        <h2 class="subtitle">This is generation #<%= region.generation %></h2>
+      </div>
+    </section>
     <% else %>
-      <p>
-        <%= link_to region.name, region, class: "button is-medium" %>
-      </p>
-      <p>
-        <strong>Generation:</strong>
-        <%= region.generation %>
-      </p>
+    <p>
+      <%= link_to region.name, region, class: "button is-medium" %>
+    </p>
+    <p>
+      <strong>Generation:</strong>
+      <%= region.generation %>
+    </p>
     <% end %>
-  </p>
 </div>

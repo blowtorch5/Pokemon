@@ -1,31 +1,20 @@
 <div id="<%= dom_id page %>">
+  <% if controller_name == "pages" && action_name == "show" %>
+    <section class="hero is-info">
 
-  <p>
-    <strong>
-      <% if controller_name == "pages" && action_name == "show" %>
-        <section class="hero is-info">
+      <div class="hero-body">
+        <h1 class="title"><%= page.title %></h1>
+      </div>
 
-          <div class="hero-body">
-            <h1 class="title"><%= page.title %></h1>
-          </div>
-
-        </section>
-      <% else %>
-        <%= link_to page.title, ability, class: "button is-large is-fullwidth" %>
-      <% end %>
-    </strong>
-  </p>
-
+    </section>
+  <% else %>
+    <%= link_to page.title, ability, class: "button is-large is-fullwidth" %>
+  <% end %>
   <div class="columns">
-
     <div class="column is-half my-5">
-
       <p>
         <%= page.content %>
       </p>
-
     </div>
-
   </div>
-
 </div>

@@ -7,7 +7,7 @@
   <div class="column is-half mt-5">
     <ul>
       <% @pokemons.each_with_index do |p, i| %>
-        <li class=<%= "mb-5" unless i >= @pokemons.length - 1 %>>
+        <li class=<%= (i >= @pokemons.length - 1) ? "mb-0" : "mb-5" %>>
           <%= render partial: 'pokemons/pokemon', locals: {pokemon: p} %>
         </li>
       <% end %>
@@ -17,7 +17,7 @@
     <div class="box">
       <ul>
         <% @regions.each_with_index do |r, i| %>
-          <li class=<%= "mb-1" unless i >= @regions.length - 1 %>>
+          <li class=<%= (i >= @regions.length - 1) ? "mb-0" : "mb-5" %>>
             <strong>
               <%= link_to r.name, r, class: "button is-medium is-fullwidth" %>
             </strong>
@@ -30,7 +30,7 @@
     <div class="box">
       <ul>
         <% @types.each_with_index do |t, i| %>
-          <li class=<%= "mb-1" unless i >= @types.length - 1 %>>
+          <li class=<%= (i >= @types.length - 1) ? "mb-0" : "mb-5" %>>
             <strong>
               <%= link_to t.name, t, class: "button is-medium is-fullwidth" %>
             </strong>
@@ -43,7 +43,7 @@
     <div class="box">
       <ul>
         <% @abilities.each_with_index do |a, i| %>
-          <li class=<%= "mb-1" unless i >= @abilities.length - 1 %>>
+          <li class=<%= (i >= @abilities.length - 1) ? "mb-0" : "mb-5" %>>
             <strong>
               <%= link_to a.name, a, class: "button is-medium is-fullwidth" %>
             </strong>
