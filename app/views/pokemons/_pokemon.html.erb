@@ -16,8 +16,8 @@
   <article class="media">
     <% if controller_name == "pokemons" && action_name == "show" %>
       <p>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=400px>
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=400px>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=400>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/<%= pokemon.pokedex_entry %>.png" alt="<%= pokemon.name %>" width=400>
       </p>
     <% else %>
       <p class="image is-128x128">
